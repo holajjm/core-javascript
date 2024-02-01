@@ -111,12 +111,28 @@ movePage(
         console.log('wrong link');
     }
 )
-  
+  console.clear();
   
   // 함수 선언문 vs. 함수 (표현)식
   
   
   // 즉시 실행 함수 (표현)식
   // Immediately Invoked Function Expression
-  let IIFE;
-  
+(function(){
+    console.log('hello');
+})();
+
+//캡슐화(incapsulation) - rename 가능
+const MASTER = (function() {
+    let uuid = 'Wjdwhdals1997!';
+    return {
+        getKey(){
+            return uuid;
+        },
+        setKey(value){
+            uuid = value;
+        }
+    }
+})();
+
+console.log(MASTER)
