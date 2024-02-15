@@ -1,6 +1,17 @@
-/* no-undef: warn */
-const a = 10;
+import { xhr } from './lib/index.js';
 
-console.log(a);
+xhr.get(
+    'https://jsonplaceholder.typicode.com/users',
+    (data) => {
+        // console.log(data)
+    }    
+)
 
-console.log( );
+xhr.post(
+    'https://jsonplaceholder.typicode.com/users',
+    {name: 'mike', age: 10},
+    (data) => {
+        // console.log(data)
+    },
+    () => {}
+)
